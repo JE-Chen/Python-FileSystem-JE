@@ -70,37 +70,28 @@ class Os_File():
 # ----------------------------------------------------------------------------------------------
     #不包含子目錄 取得包含特定附檔名的檔案
     def Check_Extension(self,Check_Path):
-        #r"C:\Test\*.txt" 取得該目錄特定附檔名的檔案
+        #取得該目錄特定附檔名的檔案
         return glob.glob(Check_Path)
 
     #取得包含子目錄的所有具特定副檔名檔案
     def Check_Extension_All(self,Check_Dir_Path):
-        #targetPattern = r"C:\Test\**\*.txt"
         return glob.glob(Check_Dir_Path)
 
     #不包含子目錄 取得包含特定附檔名的檔案
     def Check_Extension_Lib(self,Dir_Path,File_Extension):
-        #fileDir = r"C:\Test"
-        #fileExt = r"*.txt"
         return list(str(pathlib.Path(Dir_Path).glob(File_Extension)))
 
 # ----------------------------------------------------------------------------------------------
     #取得該目錄的具特定副檔名的檔案列表
     def List_Extension(self,Dir_Path,File_Extension):
-        #fileDir = r"C:\Test"
-        #fileExt = r".txt"
         return [_ for _ in os.listdir(Dir_Path) if _.endswith(File_Extension)]
 
     #取得該目錄具特定附檔名的完整路徑
     def List_Extension_Whole_Path(self, Dir_Path, File_Extension):
-        #fileDir = r"C:\Test"
-        #fileExt = r".txt"
         return [os.path.join(Dir_Path, _) for _ in os.listdir(Dir_Path) if _.endswith(File_Extension)]
 
     #取得該目錄具特定附檔名的完整路徑
     def List_Extension_Whole_Path_Lib(self, Dir_Path, File_Extension):
-        #fileDir = r"C:\Test"
-        #fileExt = r"**\*.txt"
         return list(str(pathlib.Path(Dir_Path).glob(File_Extension)))
 
 # ----------------------------------------------------------------------------------------------
