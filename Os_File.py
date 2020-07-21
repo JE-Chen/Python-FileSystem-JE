@@ -38,13 +38,13 @@ class Os_File():
 
 # ----------------------------------------------------------------------------------------------
     #寫出 普通
-    def Write_UTF_Note(self,Output=open('Note.txt','W+',encoding='utf-8'),Text='Text'):
+    def Write_UTF_Note(self,Output=open('Note.txt','w+',encoding='utf-8'),Text='Text'):
         Output.write(Text)
         Output.flush()
         Output.close()
 
     # 寫出 Print
-    def Write_UTF_Note_Print(self,Text,Output=open('Note.txt','W+',encoding='utf-8')):
+    def Write_UTF_Note_Print(self,Text,Output=open('Note.txt','w+',encoding='utf-8')):
         print(Text,file=Output)
         Output.close()
 # ----------------------------------------------------------------------------------------------
