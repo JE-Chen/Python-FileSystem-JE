@@ -1,3 +1,5 @@
+import datetime
+
 from Models.Os_Dir import Os_Dir
 from Models.Os_File import Os_File
 from Models.Os_Detail import Os_Detail
@@ -11,6 +13,4 @@ class File_System_Core():
             self.Os_Detail=Os_Detail()
         except Exception as Err:
             print(Err)
-
-
-
+        print(datetime.datetime.now(),self.__class__,'Ready',sep=' ')
